@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605134532) do
+ActiveRecord::Schema.define(version: 20170605142749) do
 
   create_table "candidates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 20170605134532) do
     t.integer  "votes",                    default: 0
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-  end
-
-  create_table "vote_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "candidate_id"
-    t.string   "ip_address"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["candidate_id"], name: "index_vote_logs_on_candidate_id", using: :btree
   end
 
 end
